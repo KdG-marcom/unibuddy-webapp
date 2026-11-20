@@ -1,0 +1,68 @@
+/**
+ * KdG – Chat met een student (vervangt de Unibuddy-embed op de opleidingspagina's)
+ * Embed op kdg.be (in het herbruikbare blok, onder de titel "Chat met een student"):
+ *   <div id="kdg-unibuddy-root"></div>
+ *   <script src="https://kdg-marcom.github.io/unibuddy-webapp/widget.js" defer></script>
+ * De widget herkent de opleiding aan het adres van de pagina en toont de chat-studenten als tekstlinks.
+ * De data komt uit data.json (zelfde map), elk uur ververst vanuit Airtable. Teksten en links: inhoud.json.
+ * Geen eigen opmaak: alleen <p> en <a>, zodat de CSS van de website (ook de nieuwe) het blok opmaakt.
+ */
+(function () {
+  "use strict";
+  var script = document.currentScript;
+  var root = document.getElementById("kdg-unibuddy-root");
+  if (!root || root.dataset.kdgUnibuddy) return;
+  root.dataset.kdgUnibuddy = "1";
+
+  // Waar staan data.json en inhoud.json? Standaard naast dit script; anders via data-src / data-inhoud op de div.
+  var DATA_URL = root.dataset.src || (script && script.src ? new URL("data.json", script.src).href : "data.json");
+  var INHOUD_URL = root.dataset.inhoud || (script && script.src ? new URL("inhoud.json", script.src).href : "inhoud.json");
+
+  // Ingebouwde standaardwaarden. De echte inhoud staat in inhoud.json en overschrijft ze.
+  var STD = {"teksten": {"nl": {"intro": "Stel je vraag over de opleiding of het studentenleven aan een student {opleiding}.", "chat": "Chat met {namen}.", "of": "of", "alle": "Bekijk alle chat-studenten van KdG", "leeg": "Stel je vraag over studeren en het studentenleven aan KdG aan een van onze studenten.", "leegLink": "Bekijk alle chat-studenten"}, "en": {"intro": "Ask a student of {opleiding} your question about the programme or student life.", "chat": "Chat with {namen}.", "of": "or", "alle": "See all KdG chat students", "leeg": "Ask one of our students your question about studying and student life at KdG.", "leegLink": "See all chat students"}}, "links": {"alle": {"nl": "https://www.kdg.be/chat", "en": "https://www.kdg.be/chat"}}, "klassen": {"student": "", "alle": ""}};
+
+  var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var veiligeUrl = function (u) { return /^https:\/\//.test(String(u || "")) ? u : ""; };
+
+  // Welke pagina? Standaard het adres van de pagina zelf; data-pagina op de div overschrijft dat (voor tests).
+  var pagina = (root.dataset.pagina || location.pathname).replace(/\/+$/, "").toLowerCase() || "/";
+  var taal = root.dataset.taal || (/^\/en(\/|$)/.test(pagina) ? "en" : "nl");
+
+  function samenvoegen(inh) {
+    var uit = JSON.parse(JSON.stringify(STD));
+    if (!inh || typeof inh !== "object") return uit;
+    ["nl", "en"].forEach(function (t) {
+      var bron = inh.teksten && inh.teksten[t];
+      if (bron) Object.keys(bron).forEach(function (k) { if (k.charAt(0) !== "_" && typeof bron[k] === "string") uit.teksten[t][k] = bron[k]; });
+    });
+    if (inh.links && inh.links.alle) ["nl", "en"].forEach(function (t) { if (veiligeUrl(inh.links.alle[t])) uit.links.alle[t] = inh.links.alle[t]; });
+    if (inh.klassen) ["student", "alle"].forEach(function (k) { if (typeof inh.klassen[k] === "string") uit.klassen[k] = inh.klassen[k]; });
+    return uit;
+  }
+
+  function link(url, tekst, klasse) {
+    return '<a href="' + esc(url) + '"' + (klasse ? ' class="' + esc(klasse) + '"' : "") + ">" + esc(tekst) + "</a>";
+  }
+
+  function toon(data, inh) {
+    var c = samenvoegen(inh), T = c.teksten[taal] || c.teksten.nl, alleUrl = c.links.alle[taal] || c.links.alle.nl;
+    var p = data && data.paginas && data.paginas[pagina];
+    var studenten = ((p && p.studenten) || []).filter(function (s) { return s && s.naam && veiligeUrl(s.url); });
+    if (!studenten.length) {
+      root.innerHTML = "<p>" + esc(T.leeg) + "</p><p>" + link(alleUrl, T.leegLink, c.klassen.alle) + "</p>";
+      return;
+    }
+    var links = studenten.map(function (s) { return link(s.url, s.naam, c.klassen.student); });
+    var namen = links.length === 1 ? links[0] : links.slice(0, -1).join(", ") + " " + esc(T.of) + " " + links[links.length - 1];
+    root.innerHTML =
+      "<p>" + esc(T.intro).split("{opleiding}").join(esc(p.opleiding)) + "</p>" +
+      "<p>" + esc(T.chat).split("{namen}").join(namen) + "</p>" +
+      "<p>" + link(alleUrl, T.alle, c.klassen.alle) + "</p>";
+  }
+
+  var haal = function (url) { return fetch(url, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); };
+  // Lukt het laden niet? Dan het algemene blok met de link naar alle chat-studenten.
+  Promise.all([haal(DATA_URL).catch(function () { return null; }), haal(INHOUD_URL).catch(function () { return null; })])
+    .then(function (r) { toon(r[0], r[1]); })
+    .catch(function () { toon(null, null); });
+})();

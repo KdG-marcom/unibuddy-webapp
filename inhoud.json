@@ -1,0 +1,30 @@
+{
+  "_uitleg": "Teksten en links van het blok 'Chat met een student'. {opleiding} en {namen} worden automatisch ingevuld. Sleutels die met _ beginnen zijn uitleg en worden genegeerd.",
+  "teksten": {
+    "nl": {
+      "intro": "Stel je vraag over de opleiding of het studentenleven aan een student {opleiding}.",
+      "chat": "Chat met {namen}.",
+      "of": "of",
+      "alle": "Bekijk alle chat-studenten van KdG",
+      "leeg": "Stel je vraag over studeren en het studentenleven aan KdG aan een van onze studenten.",
+      "leegLink": "Bekijk alle chat-studenten"
+    },
+    "en": {
+      "intro": "Ask a student of {opleiding} your question about the programme or student life.",
+      "chat": "Chat with {namen}.",
+      "of": "or",
+      "alle": "See all KdG chat students",
+      "leeg": "Ask one of our students your question about studying and student life at KdG.",
+      "leegLink": "See all chat students"
+    }
+  },
+  "links": {
+    "_uitleg": "De overzichtspagina met alle chat-studenten, per taal.",
+    "alle": { "nl": "https://www.kdg.be/chat", "en": "https://www.kdg.be/chat" }
+  },
+  "klassen": {
+    "_uitleg": "CSS-klassen van de website zelf. Leeg = gewone tekstlink. De webapp heeft geen eigen opmaak.",
+    "student": "",
+    "alle": ""
+  }
+}

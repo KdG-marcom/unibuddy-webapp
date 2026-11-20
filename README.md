@@ -1,0 +1,51 @@
+# Chat met een student (Unibuddy)
+
+Kleine webapp die op de opleidingspagina's van kdg.be de chat-studenten van die opleiding toont als tekstlinks. Vervangt de embed van Unibuddy. Zelfde opzet als [late-start-webapp](https://github.com/KdG-marcom/late-start-webapp).
+
+## Opzet
+
+Airtable (base Unibuddy) → GitHub Action (elk uur, token als secret `AIRTABLE_TOKEN`) → `data.json` op GitHub Pages → `widget.js` → kdg.be.
+
+Embed-code op kdg.be (één keer in het herbruikbare blok plakken, onder de titel "Chat met een student"):
+
+```html
+<div id="kdg-unibuddy-root"></div>
+<script src="https://kdg-marcom.github.io/unibuddy-webapp/widget.js" defer></script>
+```
+
+De widget herkent de opleiding aan het adres van de pagina. Dezelfde code werkt dus op elke pagina.
+
+## Wat pas je waar aan
+
+| Wat | Waar |
+|---|---|
+| Welke student bij welke opleiding | Airtable, tabel Opleidingen, veld Unibuddies |
+| Voornaam | Airtable, tabel Unibuddies, veld Voornaam |
+| Chatlink | Airtable, tabel Momenteel in Unibuddy, veld Profile link |
+| Adres van de opleidingspagina | Airtable, tabel Opleidingen, veld Opleidingsaanbod website |
+| Teksten (NL en EN), link naar alle chat-studenten, CSS-klassen van de site | `inhoud.json` |
+| Logica | `widget.js` en `build-data.js` |
+
+## Regels
+
+- Een student verschijnt als hij of zij in tabel Opleidingen bij Unibuddies staat **en** met hetzelfde e-mailadres in "Momenteel in Unibuddy" staat met een Profile link. Wie geen link heeft, wordt niet getoond; de Action somt die namen op in haar log.
+- De volgorde van de namen is de volgorde in het veld Unibuddies.
+- Geen studenten voor een pagina, of laden mislukt: een algemene zin met de link naar alle chat-studenten.
+- Pagina's die met `/en/` beginnen krijgen de Engelse teksten.
+- Alleen voornaam en chatlink staan in `data.json`. Achternaam en e-mailadres blijven in Airtable.
+
+## Geen eigen opmaak
+
+De widget schrijft alleen `<p>` en `<a>`. De CSS van de website maakt het blok op, ook na de overgang naar de nieuwe site. Wil je toch een klasse van de site op de links (bijvoorbeeld knoppen), vul die dan in bij `klassen` in `inhoud.json`.
+
+## Eenmalig instellen
+
+1. Repository `unibuddy-webapp` aanmaken onder KdG-marcom en deze bestanden erin zetten.
+2. Airtable-token maken: scope `data.records:read`, alleen base Unibuddy. Bewaren als secret `AIRTABLE_TOKEN` (Settings › Secrets and variables › Actions).
+3. GitHub Pages aanzetten op branch `main`.
+4. De Action "Update data.json" één keer handmatig starten en de log nakijken.
+5. Testen op `https://kdg-marcom.github.io/unibuddy-webapp/?pagina=/marketing`.
+
+## Bestanden
+
+`widget.js` (webapp), `inhoud.json` (teksten en links), `build-data.js` (Airtable → data.json), `data.json`, `index.html` (testpagina), `.github/workflows/update-data.yml`, `README.md`.

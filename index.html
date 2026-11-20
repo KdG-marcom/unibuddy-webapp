@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Testpagina: Chat met een student</title>
+<style>
+  /* Alleen voor deze testpagina. Op kdg.be komt de opmaak van de site zelf. */
+  body { margin: 0; color: #1d1d1b; font: 18px/24px "Proxima Nova", Verdana, sans-serif; }
+  main { max-width: 600px; margin: 0 auto; padding: 28px 20px 56px; }
+  a { color: #0080a1; }
+  label { display: block; margin: 0 0 28px; font-size: 15px; }
+  select { font: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <label>Testpagina. Toon het blok zoals op:
+    <select id="kies"><option value="/geen-studenten">(pagina zonder studenten)</option></select>
+  </label>
+  <h5>Chat met een student</h5>
+
+  <!-- Dit is de embed-code voor kdg.be (daar met de volledige URL naar widget.js en zonder data-pagina) -->
+  <div id="kdg-unibuddy-root"></div>
+  <script>
+    // Alleen voor de testpagina: kies welke opleidingspagina je nabootst (?pagina=/marketing).
+    var gekozen = new URLSearchParams(location.search).get("pagina") || "/marketing";
+    document.getElementById("kdg-unibuddy-root").dataset.pagina = gekozen;
+    fetch("data.json").then(function (r) { return r.json(); }).then(function (d) {
+      var kies = document.getElementById("kies");
+      Object.keys(d.paginas).forEach(function (p) { var o = document.createElement("option"); o.value = p; o.textContent = p + " (" + d.paginas[p].opleiding + ")"; kies.appendChild(o); });
+      kies.value = gekozen;
+      kies.onchange = function () { location.search = "?pagina=" + encodeURIComponent(kies.value); };
+    });
+  </script>
+  <script src="widget.js" defer></script>
+</main>
+</body>
+</html>

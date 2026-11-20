@@ -6,16 +6,16 @@ Kleine webapp die op de opleidingspagina's van kdg.be de chat-studenten van die 
 
 Airtable (base Unibuddy) → GitHub Action (elk uur, token als secret `AIRTABLE_TOKEN`) → `data.json` op GitHub Pages → `widget.js` → kdg.be.
 
-Embed-code op kdg.be (één keer in het herbruikbare blok plakken, in een HTML-paragraaf):
+Embed-code op kdg.be (één keer in het herbruikbare blok plakken, in een HTML-paragraaf vlak onder de tekstparagraaf met het icoon en de titel "Chat met een student"):
 
 ```html
-<div id="kdg-unibuddy-root" data-titel="1"></div>
+<div id="kdg-unibuddy-root"></div>
 <script src="https://kdg-marcom.github.io/unibuddy-webapp/widget.js" defer></script>
 ```
 
 De widget herkent de opleiding aan het adres van de pagina. Dezelfde code werkt dus op elke pagina.
 
-Met `data-titel="1"` toont de widget ook het icoon en de titel. De aparte tekstparagraaf met icoon en titel moet dan weg uit het blok, anders staat de titel er twee keer en komt er extra witruimte tussen titel en tekst. Zonder `data-titel` toont de widget alleen de tekst en de links.
+**Titel.** De titel en het icoon blijven in de tekstparagraaf van het CMS staan (daar zit ook het anker `#chat`). De widget schuift zichzelf onder die titel, zodat er geen extra witruimte tussen titel en tekst komt. Staat er geen titel vlak voor de widget, dan blijft ze staan waar ze staat. Met `data-titel="1"` op de div toont ze in dat geval zelf een icoon en een titel; staat er wel een titel, dan doet dat attribuut niets.
 
 ## Wat pas je waar aan
 

@@ -1,7 +1,7 @@
 /**
  * KdG – Chat met een student (vervangt de Unibuddy-embed op de opleidingspagina's)
- * Embed op kdg.be (in het herbruikbare blok; data-titel="1" laat de widget ook icoon en titel tonen):
- *   <div id="kdg-unibuddy-root" data-titel="1"></div>
+ * Embed op kdg.be (in het herbruikbare blok, in een HTML-paragraaf onder de tekstparagraaf met icoon en titel):
+ *   <div id="kdg-unibuddy-root"></div>
  *   <script src="https://kdg-marcom.github.io/unibuddy-webapp/widget.js" defer></script>
  * De widget herkent de opleiding aan het adres van de pagina en toont de chat-studenten als tekstlinks.
  * De data komt uit data.json (zelfde map), elk uur ververst vanuit Airtable. Teksten en links: inhoud.json.
@@ -27,6 +27,26 @@
   // Welke pagina? Standaard het adres van de pagina zelf; data-pagina op de div overschrijft dat (voor tests).
   var pagina = (root.dataset.pagina || location.pathname).replace(/\/+$/, "").toLowerCase() || "/";
   var taal = root.dataset.taal || (/^\/en(\/|$)/.test(pagina) ? "en" : "nl");
+
+  // Staat de titel "Chat met een student" in een apart blok vlak voor de widget (zoals in het CMS van kdg.be)?
+  // Dan schuift de widget zichzelf onder die titel, zodat er geen extra witruimte tussen titel en tekst komt.
+  // Vindt ze zo'n titel niet, dan blijft ze staan waar ze staat.
+  function onderTitel() {
+    var el = root;
+    for (var i = 0; i < 6 && el && el.parentElement; i++) {
+      var prev = el.previousElementSibling;
+      if (prev) {
+        var hs = prev.matches("h2,h3,h4,h5,h6") ? [prev] : prev.querySelectorAll("h2,h3,h4,h5,h6");
+        var h = hs[hs.length - 1];
+        if (h && !h.nextElementSibling && prev.textContent.trim() === h.textContent.trim()) { h.parentNode.insertBefore(root, h.nextSibling); return true; }
+        return false;
+      }
+      el = el.parentElement;
+    }
+    return false;
+  }
+  var heeftTitel = false;
+  try { heeftTitel = onderTitel(); } catch (err) { /* lukt het niet, dan blijft de widget gewoon staan */ }
 
   function samenvoegen(inh) {
     var uit = JSON.parse(JSON.stringify(STD));
@@ -65,8 +85,8 @@
     var c = samenvoegen(inh), T = c.teksten[taal] || c.teksten.nl, alleUrl = c.links.alle[taal] || c.links.alle.nl;
     var p = data && data.paginas && data.paginas[pagina];
     var studenten = ((p && p.studenten) || []).filter(function (s) { return s && s.naam && veiligeUrl(s.url); });
-    // Met data-titel="1" op de div toont de widget ook het icoon en de titel (dan staat het hele blok in één stuk).
-    var kop = root.dataset.titel ? '<p' + (c.klassen.icoon ? ' class="' + esc(c.klassen.icoon) + '"' : "") + "></p><h5>" + esc(T.titel) + "</h5>" : "";
+    // Met data-titel="1" op de div toont de widget zelf het icoon en de titel, maar alleen als er nog geen titel boven staat.
+    var kop = root.dataset.titel && !heeftTitel ? '<p' + (c.klassen.icoon ? ' class="' + esc(c.klassen.icoon) + '"' : "") + "></p><h5>" + esc(T.titel) + "</h5>" : "";
     if (!studenten.length) {
       root.innerHTML = kop + "<p>" + esc(T.leeg) + "</p><p>" + link(alleUrl, T.leegLink, c.klassen.alle, "alle") + "</p>";
       return;

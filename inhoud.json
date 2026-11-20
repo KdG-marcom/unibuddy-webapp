@@ -28,9 +28,10 @@
     }
   },
   "klassen": {
-    "_uitleg": "CSS-klassen van de website zelf. Leeg = gewone tekstlink. De webapp heeft geen eigen opmaak. 'icoon' en de titel verschijnen alleen als de embed-code data-titel=\"1\" heeft.",
+    "_uitleg": "CSS-klassen van de website zelf. Leeg = gewone tekstlink. De webapp heeft geen eigen opmaak. 'alleIcoon' is het pijltje dat de site bij chevron-after verwacht: de widget zet het als leeg <i>-element achter de linktekst. 'icoon' en de titel verschijnen alleen met data-titel=\"1\" en als er nog geen titel boven de widget staat.",
     "student": "",
     "alle": "chevron-after",
+    "alleIcoon": "icon icon-chevron",
     "icoon": "iconmoon icon-question"
   }
 }

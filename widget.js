@@ -19,7 +19,7 @@
   var INHOUD_URL = root.dataset.inhoud || (script && script.src ? new URL("inhoud.json", script.src).href : "inhoud.json");
 
   // Ingebouwde standaardwaarden. De echte inhoud staat in inhoud.json en overschrijft ze.
-  var STD = {"teksten": {"nl": {"titel": "Chat met een student", "intro": "Stel je vraag over de opleiding of het studentenleven aan een student {opleiding}.", "chat": "Chat met {namen}.", "of": "of", "alle": "Bekijk alle chat-studenten van KdG", "leeg": "Stel je vraag over studeren en het studentenleven aan KdG aan een van onze studenten.", "leegLink": "Bekijk alle chat-studenten"}, "en": {"titel": "Chat with a student", "intro": "Ask a student of {opleiding} your question about the programme or student life.", "chat": "Chat with {namen}.", "of": "or", "alle": "See all KdG chat students", "leeg": "Ask one of our students your question about studying and student life at KdG.", "leegLink": "See all chat students"}}, "links": {"alle": {"nl": "https://www.kdg.be/chat", "en": "https://www.kdg.be/chat"}}, "klassen": {"student": "", "alle": "chevron-after", "icoon": "iconmoon icon-question"}};
+  var STD = {"teksten": {"nl": {"titel": "Chat met een student", "intro": "Stel je vraag over de opleiding of het studentenleven aan een student {opleiding}.", "chat": "Chat met {namen}.", "of": "of", "alle": "Bekijk alle chat-studenten van KdG", "leeg": "Stel je vraag over studeren en het studentenleven aan KdG aan een van onze studenten.", "leegLink": "Bekijk alle chat-studenten"}, "en": {"titel": "Chat with a student", "intro": "Ask a student of {opleiding} your question about the programme or student life.", "chat": "Chat with {namen}.", "of": "or", "alle": "See all KdG chat students", "leeg": "Ask one of our students your question about studying and student life at KdG.", "leegLink": "See all chat students"}}, "links": {"alle": {"nl": "https://www.kdg.be/chat", "en": "https://www.kdg.be/chat"}}, "klassen": {"student": "", "alle": "chevron-after", "alleIcoon": "icon icon-chevron", "icoon": "iconmoon icon-question"}};
 
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
   var veiligeUrl = function (u) { return /^https:\/\//.test(String(u || "")) ? u : ""; };
@@ -56,13 +56,15 @@
       if (bron) Object.keys(bron).forEach(function (k) { if (k.charAt(0) !== "_" && typeof bron[k] === "string") uit.teksten[t][k] = bron[k]; });
     });
     if (inh.links && inh.links.alle) ["nl", "en"].forEach(function (t) { if (veiligeUrl(inh.links.alle[t])) uit.links.alle[t] = inh.links.alle[t]; });
-    if (inh.klassen) ["student", "alle", "icoon"].forEach(function (k) { if (typeof inh.klassen[k] === "string") uit.klassen[k] = inh.klassen[k]; });
+    if (inh.klassen) ["student", "alle", "alleIcoon", "icoon"].forEach(function (k) { if (typeof inh.klassen[k] === "string") uit.klassen[k] = inh.klassen[k]; });
     return uit;
   }
 
   // soort = "student" of "alle": dat gaat mee naar Analytics.
-  function link(url, tekst, klasse, soort) {
-    return '<a href="' + esc(url) + '" data-kdg-chat="' + soort + '"' + (klasse ? ' class="' + esc(klasse) + '"' : "") + ">" + esc(tekst) + "</a>";
+  // icoon = klasse van een leeg <i>-element achter de tekst (het pijltje van de site bij chevron-after).
+  function link(url, tekst, klasse, soort, icoon) {
+    return '<a href="' + esc(url) + '" data-kdg-chat="' + soort + '"' + (klasse ? ' class="' + esc(klasse) + '"' : "") + ">" + esc(tekst) +
+      (icoon ? '<i class="' + esc(icoon) + '"></i>' : "") + "</a>";
   }
 
   // ---------- Analytics ----------
@@ -88,7 +90,7 @@
     // Met data-titel="1" op de div toont de widget zelf het icoon en de titel, maar alleen als er nog geen titel boven staat.
     var kop = root.dataset.titel && !heeftTitel ? '<p' + (c.klassen.icoon ? ' class="' + esc(c.klassen.icoon) + '"' : "") + "></p><h5>" + esc(T.titel) + "</h5>" : "";
     if (!studenten.length) {
-      root.innerHTML = kop + "<p>" + esc(T.leeg) + "</p><p>" + link(alleUrl, T.leegLink, c.klassen.alle, "alle") + "</p>";
+      root.innerHTML = kop + "<p>" + esc(T.leeg) + "</p><p>" + link(alleUrl, T.leegLink, c.klassen.alle, "alle", c.klassen.alleIcoon) + "</p>";
       return;
     }
     opleidingNaam = p.opleiding || "";
@@ -97,7 +99,7 @@
     root.innerHTML = kop +
       "<p>" + esc(T.intro).split("{opleiding}").join(esc(p.opleiding)) + "</p>" +
       "<p>" + esc(T.chat).split("{namen}").join(namen) + "</p>" +
-      "<p>" + link(alleUrl, T.alle, c.klassen.alle, "alle") + "</p>";
+      "<p>" + link(alleUrl, T.alle, c.klassen.alle, "alle", c.klassen.alleIcoon) + "</p>";
   }
 
   var haal = function (url) { return fetch(url, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); };

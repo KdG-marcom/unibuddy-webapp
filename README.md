@@ -38,6 +38,10 @@ De widget herkent de opleiding aan het adres van de pagina. Dezelfde code werkt 
 
 De widget schrijft alleen `<p>` en `<a>`. De CSS van de website maakt het blok op, ook na de overgang naar de nieuwe site. Wil je toch een klasse van de site op de links (bijvoorbeeld knoppen), vul die dan in bij `klassen` in `inhoud.json`.
 
+## Analytics
+
+Elke klik op een link in het blok stuurt het GA4-event `unibuddy_click` met de parameters `link_type` (`student` of `alle`), `opleiding`, `student` (voornaam) en `link_url`. De widget gebruikt `gtag` als de site die heeft, anders de dataLayer van Google Tag Manager. Om de parameters in rapporten te zien, registreer je ze in GA4 als aangepaste dimensies.
+
 ## Eenmalig instellen
 
 1. Repository `unibuddy-webapp` aanmaken onder KdG-marcom en deze bestanden erin zetten.

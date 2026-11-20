@@ -40,24 +40,42 @@
     return uit;
   }
 
-  function link(url, tekst, klasse) {
-    return '<a href="' + esc(url) + '"' + (klasse ? ' class="' + esc(klasse) + '"' : "") + ">" + esc(tekst) + "</a>";
+  // soort = "student" of "alle": dat gaat mee naar Analytics.
+  function link(url, tekst, klasse, soort) {
+    return '<a href="' + esc(url) + '" data-kdg-chat="' + soort + '"' + (klasse ? ' class="' + esc(klasse) + '"' : "") + ">" + esc(tekst) + "</a>";
   }
+
+  // ---------- Analytics ----------
+  // Elke klik op een link in het blok wordt een GA4-event "unibuddy_click" met:
+  //   link_type = student | alle, opleiding, student (voornaam, leeg bij "alle"), link_url.
+  // Via gtag als de site die heeft, anders via de dataLayer van Google Tag Manager. Zonder een van beide gebeurt er niets.
+  var opleidingNaam = "";
+  root.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest ? e.target.closest("a[data-kdg-chat]") : null;
+    if (!a) return;
+    var soort = a.getAttribute("data-kdg-chat");
+    var params = { link_type: soort, opleiding: opleidingNaam, student: soort === "student" ? a.textContent : "", link_url: a.href };
+    try {
+      if (typeof window.gtag === "function") window.gtag("event", "unibuddy_click", params);
+      else if (Array.isArray(window.dataLayer)) window.dataLayer.push(Object.assign({ event: "unibuddy_click" }, params));
+    } catch (err) { /* meten mag de link nooit blokkeren */ }
+  });
 
   function toon(data, inh) {
     var c = samenvoegen(inh), T = c.teksten[taal] || c.teksten.nl, alleUrl = c.links.alle[taal] || c.links.alle.nl;
     var p = data && data.paginas && data.paginas[pagina];
     var studenten = ((p && p.studenten) || []).filter(function (s) { return s && s.naam && veiligeUrl(s.url); });
     if (!studenten.length) {
-      root.innerHTML = "<p>" + esc(T.leeg) + "</p><p>" + link(alleUrl, T.leegLink, c.klassen.alle) + "</p>";
+      root.innerHTML = "<p>" + esc(T.leeg) + "</p><p>" + link(alleUrl, T.leegLink, c.klassen.alle, "alle") + "</p>";
       return;
     }
-    var links = studenten.map(function (s) { return link(s.url, s.naam, c.klassen.student); });
+    opleidingNaam = p.opleiding || "";
+    var links = studenten.map(function (s) { return link(s.url, s.naam, c.klassen.student, "student"); });
     var namen = links.length === 1 ? links[0] : links.slice(0, -1).join(", ") + " " + esc(T.of) + " " + links[links.length - 1];
     root.innerHTML =
       "<p>" + esc(T.intro).split("{opleiding}").join(esc(p.opleiding)) + "</p>" +
       "<p>" + esc(T.chat).split("{namen}").join(namen) + "</p>" +
-      "<p>" + link(alleUrl, T.alle, c.klassen.alle) + "</p>";
+      "<p>" + link(alleUrl, T.alle, c.klassen.alle, "alle") + "</p>";
   }
 
   var haal = function (url) { return fetch(url, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); };

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T08:31:22.091Z",
+ "updated": "2026-11-20T08:46:29.136Z",
  "paginas": {
   "/bachelor-event-projectmanagement": {
    "opleiding": "Event & Project Management",
@@ -7,6 +7,14 @@
     {
      "naam": "Eline",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6a042e5aa01b2726d3aa74ef"
+    },
+    {
+     "naam": "Amber",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc353545ceacd20bf6d8ca"
+    },
+    {
+     "naam": "Maité",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afdd3b8fc69fe8f69718c6f"
     }
    ]
   },
@@ -44,6 +52,10 @@
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693b46bebcf5bd5c32ff0ad0"
     },
     {
+     "naam": "Sudem",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc84760dcf5e48bdf542d4"
+    },
+    {
      "naam": "Prajwal",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693b5f39a3811b68e4ffeb0c"
     }
@@ -55,6 +67,19 @@
     {
      "naam": "Robbe",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/68ffabf17d465c32b9fc880f"
+    }
+   ]
+  },
+  "/internationaal-ondernemen": {
+   "opleiding": "Internationaal Ondernemen",
+   "studenten": [
+    {
+     "naam": "Benthe",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc977fea0227fd868826b5"
+    },
+    {
+     "naam": "Mattis",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc9bcdec88cdc8483e8703"
     }
    ]
   },
@@ -120,12 +145,20 @@
     {
      "naam": "Keoni",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/695d038e81d9c318ac0ffca8"
+    },
+    {
+     "naam": "Najoua",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afcd17a3aa71f2f89963279"
     }
    ]
   },
   "/multimedia-creative-technologies": {
    "opleiding": "Multimedia en Creatieve Technologie",
    "studenten": [
+    {
+     "naam": "Romy",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc4e642be93ccd6debea19"
+    },
     {
      "naam": "Ciara",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693adcae94da9b29df3f7571"
@@ -138,6 +171,15 @@
     {
      "naam": "Kinley",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942713b5300e913086e9711"
+    }
+   ]
+  },
+  "/opleidingen/bachelor-en-graduaatsopleidingen/medische-beeldvorming-en-radiotherapie": {
+   "opleiding": "Medische Beeldvorming en Radiotherapie",
+   "studenten": [
+    {
+     "naam": "Lowie",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afccf4041ec1ed858f516f0"
     }
    ]
   },
@@ -175,12 +217,29 @@
     }
    ]
   },
+  "/toegepaste-informatica": {
+   "opleiding": "Toegepaste Informatica",
+   "studenten": [
+    {
+     "naam": "Emilie",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc997cb2c95c043e1107e9"
+    }
+   ]
+  },
   "/verpleegkunde": {
    "opleiding": "Verpleegkunde",
    "studenten": [
     {
      "naam": "Eli",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/68fa3a9bd50e5c3546d9ce50"
+    },
+    {
+     "naam": "Aude",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc1fe543beeaf32e2efc1a"
+    },
+    {
+     "naam": "Lin",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc123a9aedf377e74dfbd6"
     }
    ]
   },

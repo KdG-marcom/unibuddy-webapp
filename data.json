@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T08:46:29.136Z",
+ "updated": "2026-11-20T17:49:49.734Z",
  "paginas": {
   "/bachelor-event-projectmanagement": {
    "opleiding": "Event & Project Management",
@@ -15,6 +15,15 @@
     {
      "naam": "Maité",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afdd3b8fc69fe8f69718c6f"
+    }
+   ]
+  },
+  "/biomedische-laboratoriumtechnologie": {
+   "opleiding": "Biomedische Laboratoriumtechnologie",
+   "studenten": [
+    {
+     "naam": "Quyana",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693af7385300e93c4ec2ac79"
     }
    ]
   },

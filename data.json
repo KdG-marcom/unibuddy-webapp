@@ -1,4 +1,201 @@
 {
- "updated": "",
- "paginas": {}
+ "updated": "2026-11-20T08:31:22.091Z",
+ "paginas": {
+  "/bachelor-event-projectmanagement": {
+   "opleiding": "Event & Project Management",
+   "studenten": [
+    {
+     "naam": "Eline",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6a042e5aa01b2726d3aa74ef"
+    }
+   ]
+  },
+  "/business-languages": {
+   "opleiding": "Business & Languages",
+   "studenten": [
+    {
+     "naam": "Jutta",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6a043724a01b2731ecfb8733"
+    },
+    {
+     "naam": "Chaima",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6a045771b7909953e905f797"
+    }
+   ]
+  },
+  "/chemie": {
+   "opleiding": "Chemie",
+   "studenten": [
+    {
+     "naam": "Kane",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6788f7ebd1ceda30a78f9e85"
+    }
+   ]
+  },
+  "/en/applied-computer-science": {
+   "opleiding": "Applied Computer Science",
+   "studenten": [
+    {
+     "naam": "Saad",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693adc5e5300e928cc290e79"
+    },
+    {
+     "naam": "Tanmoy",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693b46bebcf5bd5c32ff0ad0"
+    },
+    {
+     "naam": "Prajwal",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693b5f39a3811b68e4ffeb0c"
+    }
+   ]
+  },
+  "/en/bachelor-multimedia-creative-technologies": {
+   "opleiding": "Multimedia & Creative Technologies",
+   "studenten": [
+    {
+     "naam": "Robbe",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/68ffabf17d465c32b9fc880f"
+    }
+   ]
+  },
+  "/kmo-management": {
+   "opleiding": "KMO-Management",
+   "studenten": [
+    {
+     "naam": "Amber-Lynn",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/677d47ce1607e91f6724eb8f"
+    },
+    {
+     "naam": "Daan",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/675d8e7b666d8539471c07ff"
+    }
+   ]
+  },
+  "/leraar-kleuteronderwijs": {
+   "opleiding": "Leraar Kleuteronderwijs",
+   "studenten": [
+    {
+     "naam": "Yana",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6761fc7552ccac7472994882"
+    },
+    {
+     "naam": "Emma",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6762d82f52ccac07811db388"
+    },
+    {
+     "naam": "Louanne",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/675abdad4745ae4a44f334ac"
+    },
+    {
+     "naam": "Elaine",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693adc0fa3811b2f1e639caa"
+    }
+   ]
+  },
+  "/leraar-lager-onderwijs": {
+   "opleiding": "Leraar Lager Onderwijs",
+   "studenten": [
+    {
+     "naam": "Hanne",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693d39832de0c81638071e25"
+    },
+    {
+     "naam": "Lucca",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/675ac015666d854a3c4f6257"
+    }
+   ]
+  },
+  "/maatschappelijk-werk-graduaat": {
+   "opleiding": "Maatschappelijk Werk",
+   "studenten": [
+    {
+     "naam": "Yasmine",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/697a8bfcab9a84896147b3cb"
+    }
+   ]
+  },
+  "/marketing": {
+   "opleiding": "Marketing",
+   "studenten": [
+    {
+     "naam": "Keoni",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/695d038e81d9c318ac0ffca8"
+    }
+   ]
+  },
+  "/multimedia-creative-technologies": {
+   "opleiding": "Multimedia en Creatieve Technologie",
+   "studenten": [
+    {
+     "naam": "Ciara",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693adcae94da9b29df3f7571"
+    }
+   ]
+  },
+  "/opleidingen/bachelor-en-graduaatsopleidingen/human-resources-management": {
+   "opleiding": "Human Resources Management",
+   "studenten": [
+    {
+     "naam": "Kinley",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942713b5300e913086e9711"
+    }
+   ]
+  },
+  "/orthopedagogie": {
+   "opleiding": "Orthopedagogie",
+   "studenten": [
+    {
+     "naam": "Brechtje",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/67d00e2987a4a969abefc52d"
+    },
+    {
+     "naam": "Kaat",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693ffa084e12750a8242e404"
+    },
+    {
+     "naam": "Audrey",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6979e9c1ec5ef2df99667359"
+    }
+   ]
+  },
+  "/sociaal-werk": {
+   "opleiding": "Sociaal Werk",
+   "studenten": [
+    {
+     "naam": "Bink",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c0d50a3811ba94be12e5c"
+    },
+    {
+     "naam": "Phoebe",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942b9a694da9b306327dfd7"
+    },
+    {
+     "naam": "Olivia",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c7a775300e9dde19acac4"
+    }
+   ]
+  },
+  "/verpleegkunde": {
+   "opleiding": "Verpleegkunde",
+   "studenten": [
+    {
+     "naam": "Eli",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/68fa3a9bd50e5c3546d9ce50"
+    }
+   ]
+  },
+  "/vroedkunde": {
+   "opleiding": "Vroedkunde",
+   "studenten": [
+    {
+     "naam": "Bente",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/675d4c10b81ad50ed4c0ca4f"
+    },
+    {
+     "naam": "Nisrine",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693f0b4394da9bad2956d77d"
+    }
+   ]
+  }
+ }
 }

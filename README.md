@@ -6,14 +6,16 @@ Kleine webapp die op de opleidingspagina's van kdg.be de chat-studenten van die 
 
 Airtable (base Unibuddy) → GitHub Action (elk uur, token als secret `AIRTABLE_TOKEN`) → `data.json` op GitHub Pages → `widget.js` → kdg.be.
 
-Embed-code op kdg.be (één keer in het herbruikbare blok plakken, onder de titel "Chat met een student"):
+Embed-code op kdg.be (één keer in het herbruikbare blok plakken, in een HTML-paragraaf):
 
 ```html
-<div id="kdg-unibuddy-root"></div>
+<div id="kdg-unibuddy-root" data-titel="1"></div>
 <script src="https://kdg-marcom.github.io/unibuddy-webapp/widget.js" defer></script>
 ```
 
 De widget herkent de opleiding aan het adres van de pagina. Dezelfde code werkt dus op elke pagina.
+
+Met `data-titel="1"` toont de widget ook het icoon en de titel. De aparte tekstparagraaf met icoon en titel moet dan weg uit het blok, anders staat de titel er twee keer en komt er extra witruimte tussen titel en tekst. Zonder `data-titel` toont de widget alleen de tekst en de links.
 
 ## Wat pas je waar aan
 

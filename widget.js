@@ -1,7 +1,7 @@
 /**
  * KdG – Chat met een student (vervangt de Unibuddy-embed op de opleidingspagina's)
- * Embed op kdg.be (in het herbruikbare blok, onder de titel "Chat met een student"):
- *   <div id="kdg-unibuddy-root"></div>
+ * Embed op kdg.be (in het herbruikbare blok; data-titel="1" laat de widget ook icoon en titel tonen):
+ *   <div id="kdg-unibuddy-root" data-titel="1"></div>
  *   <script src="https://kdg-marcom.github.io/unibuddy-webapp/widget.js" defer></script>
  * De widget herkent de opleiding aan het adres van de pagina en toont de chat-studenten als tekstlinks.
  * De data komt uit data.json (zelfde map), elk uur ververst vanuit Airtable. Teksten en links: inhoud.json.
@@ -19,7 +19,7 @@
   var INHOUD_URL = root.dataset.inhoud || (script && script.src ? new URL("inhoud.json", script.src).href : "inhoud.json");
 
   // Ingebouwde standaardwaarden. De echte inhoud staat in inhoud.json en overschrijft ze.
-  var STD = {"teksten": {"nl": {"intro": "Stel je vraag over de opleiding of het studentenleven aan een student {opleiding}.", "chat": "Chat met {namen}.", "of": "of", "alle": "Bekijk alle chat-studenten van KdG", "leeg": "Stel je vraag over studeren en het studentenleven aan KdG aan een van onze studenten.", "leegLink": "Bekijk alle chat-studenten"}, "en": {"intro": "Ask a student of {opleiding} your question about the programme or student life.", "chat": "Chat with {namen}.", "of": "or", "alle": "See all KdG chat students", "leeg": "Ask one of our students your question about studying and student life at KdG.", "leegLink": "See all chat students"}}, "links": {"alle": {"nl": "https://www.kdg.be/chat", "en": "https://www.kdg.be/chat"}}, "klassen": {"student": "", "alle": ""}};
+  var STD = {"teksten": {"nl": {"titel": "Chat met een student", "intro": "Stel je vraag over de opleiding of het studentenleven aan een student {opleiding}.", "chat": "Chat met {namen}.", "of": "of", "alle": "Bekijk alle chat-studenten van KdG", "leeg": "Stel je vraag over studeren en het studentenleven aan KdG aan een van onze studenten.", "leegLink": "Bekijk alle chat-studenten"}, "en": {"titel": "Chat with a student", "intro": "Ask a student of {opleiding} your question about the programme or student life.", "chat": "Chat with {namen}.", "of": "or", "alle": "See all KdG chat students", "leeg": "Ask one of our students your question about studying and student life at KdG.", "leegLink": "See all chat students"}}, "links": {"alle": {"nl": "https://www.kdg.be/chat", "en": "https://www.kdg.be/chat"}}, "klassen": {"student": "", "alle": "chevron-after", "icoon": "iconmoon icon-question"}};
 
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
   var veiligeUrl = function (u) { return /^https:\/\//.test(String(u || "")) ? u : ""; };
@@ -36,7 +36,7 @@
       if (bron) Object.keys(bron).forEach(function (k) { if (k.charAt(0) !== "_" && typeof bron[k] === "string") uit.teksten[t][k] = bron[k]; });
     });
     if (inh.links && inh.links.alle) ["nl", "en"].forEach(function (t) { if (veiligeUrl(inh.links.alle[t])) uit.links.alle[t] = inh.links.alle[t]; });
-    if (inh.klassen) ["student", "alle"].forEach(function (k) { if (typeof inh.klassen[k] === "string") uit.klassen[k] = inh.klassen[k]; });
+    if (inh.klassen) ["student", "alle", "icoon"].forEach(function (k) { if (typeof inh.klassen[k] === "string") uit.klassen[k] = inh.klassen[k]; });
     return uit;
   }
 
@@ -65,14 +65,16 @@
     var c = samenvoegen(inh), T = c.teksten[taal] || c.teksten.nl, alleUrl = c.links.alle[taal] || c.links.alle.nl;
     var p = data && data.paginas && data.paginas[pagina];
     var studenten = ((p && p.studenten) || []).filter(function (s) { return s && s.naam && veiligeUrl(s.url); });
+    // Met data-titel="1" op de div toont de widget ook het icoon en de titel (dan staat het hele blok in één stuk).
+    var kop = root.dataset.titel ? '<p' + (c.klassen.icoon ? ' class="' + esc(c.klassen.icoon) + '"' : "") + "></p><h5>" + esc(T.titel) + "</h5>" : "";
     if (!studenten.length) {
-      root.innerHTML = "<p>" + esc(T.leeg) + "</p><p>" + link(alleUrl, T.leegLink, c.klassen.alle, "alle") + "</p>";
+      root.innerHTML = kop + "<p>" + esc(T.leeg) + "</p><p>" + link(alleUrl, T.leegLink, c.klassen.alle, "alle") + "</p>";
       return;
     }
     opleidingNaam = p.opleiding || "";
     var links = studenten.map(function (s) { return link(s.url, s.naam, c.klassen.student, "student"); });
     var namen = links.length === 1 ? links[0] : links.slice(0, -1).join(", ") + " " + esc(T.of) + " " + links[links.length - 1];
-    root.innerHTML =
+    root.innerHTML = kop +
       "<p>" + esc(T.intro).split("{opleiding}").join(esc(p.opleiding)) + "</p>" +
       "<p>" + esc(T.chat).split("{namen}").join(namen) + "</p>" +
       "<p>" + link(alleUrl, T.alle, c.klassen.alle, "alle") + "</p>";

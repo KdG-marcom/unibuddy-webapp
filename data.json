@@ -1,16 +1,55 @@
 {
- "updated": "2026-11-20T17:49:49.734Z",
+ "updated": "2026-11-25T05:45:43.767Z",
  "paginas": {
+  "/accountancy-fiscaliteit": {
+   "opleiding": "Accountancy-Fiscaliteit",
+   "studenten": [
+    {
+     "naam": "Dante",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afd8ed51dd7daa309939316"
+    },
+    {
+     "naam": "Jailen",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afcbf07dc775d65ac2dc322"
+    },
+    {
+     "naam": "Lou-Ann",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afca40a7fd399873412097c"
+    },
+    {
+     "naam": "Zara",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc843e16970ba36bda24be"
+    }
+   ]
+  },
+  "/autotechnologie": {
+   "opleiding": "Autotechnologie",
+   "studenten": [
+    {
+     "naam": "Fiebe",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6b0197bd0020beaed9d4f32d"
+    }
+   ]
+  },
+  "/bachelor-cross-media-management": {
+   "opleiding": "Cross Media Management",
+   "studenten": [
+    {
+     "naam": "Lara",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc1208ca55ca12024e47b2"
+    }
+   ]
+  },
   "/bachelor-event-projectmanagement": {
    "opleiding": "Event & Project Management",
    "studenten": [
     {
-     "naam": "Eline",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6a042e5aa01b2726d3aa74ef"
-    },
-    {
      "naam": "Amber",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc353545ceacd20bf6d8ca"
+    },
+    {
+     "naam": "Eline",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6a042e5aa01b2726d3aa74ef"
     },
     {
      "naam": "Maité",
@@ -31,12 +70,12 @@
    "opleiding": "Business & Languages",
    "studenten": [
     {
-     "naam": "Jutta",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6a043724a01b2731ecfb8733"
-    },
-    {
      "naam": "Chaima",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6a045771b7909953e905f797"
+    },
+    {
+     "naam": "Jutta",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6a043724a01b2731ecfb8733"
     }
    ]
   },
@@ -53,20 +92,24 @@
    "opleiding": "Applied Computer Science",
    "studenten": [
     {
-     "naam": "Saad",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693adc5e5300e928cc290e79"
+     "naam": "Julita",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc5f864a86c5c5c5091bd4"
     },
     {
-     "naam": "Tanmoy",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693b46bebcf5bd5c32ff0ad0"
+     "naam": "Prajwal",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693b5f39a3811b68e4ffeb0c"
+    },
+    {
+     "naam": "Saad",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693adc5e5300e928cc290e79"
     },
     {
      "naam": "Sudem",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc84760dcf5e48bdf542d4"
     },
     {
-     "naam": "Prajwal",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693b5f39a3811b68e4ffeb0c"
+     "naam": "Tanmoy",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693b46bebcf5bd5c32ff0ad0"
     }
    ]
   },
@@ -76,6 +119,15 @@
     {
      "naam": "Robbe",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/68ffabf17d465c32b9fc880f"
+    }
+   ]
+  },
+  "/fotografie": {
+   "opleiding": "Fotografie",
+   "studenten": [
+    {
+     "naam": "Ianna",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/675b3e6e4745ae48602db532"
     }
    ]
   },
@@ -100,8 +152,16 @@
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/677d47ce1607e91f6724eb8f"
     },
     {
+     "naam": "Arno",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afd5f90dfaf7884ca89d495"
+    },
+    {
      "naam": "Daan",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/675d8e7b666d8539471c07ff"
+    },
+    {
+     "naam": "Hanne",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc4d1a41fbd9e1fee90631"
     }
    ]
   },
@@ -109,8 +169,8 @@
    "opleiding": "Leraar Kleuteronderwijs",
    "studenten": [
     {
-     "naam": "Yana",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6761fc7552ccac7472994882"
+     "naam": "Elaine",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693adc0fa3811b2f1e639caa"
     },
     {
      "naam": "Emma",
@@ -121,8 +181,8 @@
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/675abdad4745ae4a44f334ac"
     },
     {
-     "naam": "Elaine",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693adc0fa3811b2f1e639caa"
+     "naam": "Yana",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6761fc7552ccac7472994882"
     }
    ]
   },
@@ -156,8 +216,16 @@
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/695d038e81d9c318ac0ffca8"
     },
     {
+     "naam": "Lotte",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc9f1e16a987f3e95d2cf1"
+    },
+    {
      "naam": "Najoua",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afcd17a3aa71f2f89963279"
+    },
+    {
+     "naam": "Victoria",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afca482169bdc89a7fd93bc"
     }
    ]
   },
@@ -165,12 +233,16 @@
    "opleiding": "Multimedia en Creatieve Technologie",
    "studenten": [
     {
-     "naam": "Romy",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc4e642be93ccd6debea19"
-    },
-    {
      "naam": "Ciara",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693adcae94da9b29df3f7571"
+    },
+    {
+     "naam": "Kyara",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6b01af72ad825f9a9b0f688f"
+    },
+    {
+     "naam": "Romy",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc4e642be93ccd6debea19"
     }
    ]
   },
@@ -189,6 +261,10 @@
     {
      "naam": "Lowie",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afccf4041ec1ed858f516f0"
+    },
+    {
+     "naam": "Marie",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6b01b14ba68df86d6b5f782e"
     }
    ]
   },
@@ -196,16 +272,38 @@
    "opleiding": "Orthopedagogie",
    "studenten": [
     {
+     "naam": "Audrey",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6979e9c1ec5ef2df99667359"
+    },
+    {
      "naam": "Brechtje",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/67d00e2987a4a969abefc52d"
     },
     {
      "naam": "Kaat",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693ffa084e12750a8242e404"
+    }
+   ]
+  },
+  "/pedagogie-van-het-jonge-kind": {
+   "opleiding": "Pedagogie van het Jonge Kind",
+   "studenten": [
+    {
+     "naam": "Elise",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6b056d9133b71275dde152c9"
+    }
+   ]
+  },
+  "/rechtspraktijk": {
+   "opleiding": "Rechtspraktijk",
+   "studenten": [
+    {
+     "naam": "Elien",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc16343ad646231132b88c"
     },
     {
-     "naam": "Audrey",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6979e9c1ec5ef2df99667359"
+     "naam": "Miryam",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afec3e769f3ce11ec4c201e"
     }
    ]
   },
@@ -217,12 +315,12 @@
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c0d50a3811ba94be12e5c"
     },
     {
-     "naam": "Phoebe",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942b9a694da9b306327dfd7"
-    },
-    {
      "naam": "Olivia",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c7a775300e9dde19acac4"
+    },
+    {
+     "naam": "Phoebe",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942b9a694da9b306327dfd7"
     }
    ]
   },
@@ -232,6 +330,10 @@
     {
      "naam": "Emilie",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc997cb2c95c043e1107e9"
+    },
+    {
+     "naam": "Lok",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afd9a0360adefacb83c195d"
     }
    ]
   },
@@ -239,12 +341,16 @@
    "opleiding": "Verpleegkunde",
    "studenten": [
     {
+     "naam": "Aude",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc1fe543beeaf32e2efc1a"
+    },
+    {
      "naam": "Eli",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/68fa3a9bd50e5c3546d9ce50"
     },
     {
-     "naam": "Aude",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc1fe543beeaf32e2efc1a"
+     "naam": "Jinte",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc236ab922b93686cd9d3e"
     },
     {
      "naam": "Lin",

@@ -33,16 +33,5 @@
     "alle": "chevron-after",
     "alleIcoon": "icon icon-chevron",
     "icoon": "iconmoon icon-question"
-  },
-  "toonStudentenVan": {
-    "_uitleg": "Pagina's (bv. afstudeerrichtingen) die geen eigen studenten hebben in Airtable maar de studenten van een andere pagina tonen. Links de pagina waar het blok staat, rechts de pagina waarvan de studenten komen. Heeft de pagina zelf studenten, dan gaan die voor.",
-    "/applicatieontwikkeling": "/toegepaste-informatica",
-    "/softwaremanagement": "/toegepaste-informatica",
-    "/systeem-en-netwerkbeheer": "/toegepaste-informatica",
-    "/artificiele-intelligentie": "/toegepaste-informatica",
-    "/biochemie": "/chemie",
-    "/procestechnologie": "/chemie",
-    "/farmaceutische-biologische-laboratoriumtechnologie": "/biomedische-laboratoriumtechnologie",
-    "/medische-laboratoriumtechnologie": "/biomedische-laboratoriumtechnologie"
   }
 }

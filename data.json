@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T05:45:43.767Z",
+ "updated": "2026-11-25T06:25:51.457Z",
  "paginas": {
   "/accountancy-fiscaliteit": {
    "opleiding": "Accountancy-Fiscaliteit",
@@ -22,12 +22,47 @@
     }
    ]
   },
+  "/applicatieontwikkeling": {
+   "opleiding": "Software Engineer",
+   "studenten": [
+    {
+     "naam": "Emilie",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc997cb2c95c043e1107e9"
+    },
+    {
+     "naam": "Lok",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afd9a0360adefacb83c195d"
+    }
+   ]
+  },
+  "/artificiele-intelligentie": {
+   "opleiding": "AI & Data Engineer",
+   "studenten": [
+    {
+     "naam": "Emilie",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc997cb2c95c043e1107e9"
+    },
+    {
+     "naam": "Lok",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afd9a0360adefacb83c195d"
+    }
+   ]
+  },
   "/autotechnologie": {
    "opleiding": "Autotechnologie",
    "studenten": [
     {
      "naam": "Fiebe",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6b0197bd0020beaed9d4f32d"
+    }
+   ]
+  },
+  "/bachelor-chemie": {
+   "opleiding": "Chemie",
+   "studenten": [
+    {
+     "naam": "Kane",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6788f7ebd1ceda30a78f9e85"
     }
    ]
   },
@@ -54,6 +89,15 @@
     {
      "naam": "Maité",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afdd3b8fc69fe8f69718c6f"
+    }
+   ]
+  },
+  "/biochemie": {
+   "opleiding": "Biochemie",
+   "studenten": [
+    {
+     "naam": "Kane",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6788f7ebd1ceda30a78f9e85"
     }
    ]
   },
@@ -122,6 +166,15 @@
     }
    ]
   },
+  "/farmaceutische-biologische-laboratoriumtechnologie": {
+   "opleiding": "Farmaceutische en Biologische Laboratoriumtechnologie",
+   "studenten": [
+    {
+     "naam": "Quyana",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693af7385300e93c4ec2ac79"
+    }
+   ]
+  },
   "/fotografie": {
    "opleiding": "Fotografie",
    "studenten": [
@@ -165,6 +218,23 @@
     }
    ]
   },
+  "/kunst-en-cultuurbemiddeling": {
+   "opleiding": "Kunst- en Cultuurbemiddeling",
+   "studenten": [
+    {
+     "naam": "Bink",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c0d50a3811ba94be12e5c"
+    },
+    {
+     "naam": "Olivia",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c7a775300e9dde19acac4"
+    },
+    {
+     "naam": "Phoebe",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942b9a694da9b306327dfd7"
+    }
+   ]
+  },
   "/leraar-kleuteronderwijs": {
    "opleiding": "Leraar Kleuteronderwijs",
    "studenten": [
@@ -199,12 +269,46 @@
     }
    ]
   },
+  "/maatschappelijk-werk": {
+   "opleiding": "Maatschappelijk Werk",
+   "studenten": [
+    {
+     "naam": "Bink",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c0d50a3811ba94be12e5c"
+    },
+    {
+     "naam": "Olivia",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c7a775300e9dde19acac4"
+    },
+    {
+     "naam": "Phoebe",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942b9a694da9b306327dfd7"
+    }
+   ]
+  },
   "/maatschappelijk-werk-graduaat": {
    "opleiding": "Maatschappelijk Werk",
    "studenten": [
     {
      "naam": "Yasmine",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/697a8bfcab9a84896147b3cb"
+    }
+   ]
+  },
+  "/maatschappelijke-advisering": {
+   "opleiding": "Maatschappelijke Advisering",
+   "studenten": [
+    {
+     "naam": "Bink",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c0d50a3811ba94be12e5c"
+    },
+    {
+     "naam": "Olivia",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c7a775300e9dde19acac4"
+    },
+    {
+     "naam": "Phoebe",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942b9a694da9b306327dfd7"
     }
    ]
   },
@@ -226,6 +330,15 @@
     {
      "naam": "Victoria",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afca482169bdc89a7fd93bc"
+    }
+   ]
+  },
+  "/medische-laboratoriumtechnologie": {
+   "opleiding": "Medische Laboratoriumtechnologie",
+   "studenten": [
+    {
+     "naam": "Quyana",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693af7385300e93c4ec2ac79"
     }
    ]
   },
@@ -268,6 +381,32 @@
     }
    ]
   },
+  "/opleidingen/bachelor-en-graduaatsopleidingen/toegepaste-informatica/cybersecurity-specialist": {
+   "opleiding": "Cybersecurity Specialist",
+   "studenten": [
+    {
+     "naam": "Emilie",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc997cb2c95c043e1107e9"
+    },
+    {
+     "naam": "Lok",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afd9a0360adefacb83c195d"
+    }
+   ]
+  },
+  "/opleidingen/bachelor-en-graduaatsopleidingen/toegepaste-informatica/physical-ai-specialist": {
+   "opleiding": "Physical AI Specialist",
+   "studenten": [
+    {
+     "naam": "Emilie",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc997cb2c95c043e1107e9"
+    },
+    {
+     "naam": "Lok",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afd9a0360adefacb83c195d"
+    }
+   ]
+  },
   "/orthopedagogie": {
    "opleiding": "Orthopedagogie",
    "studenten": [
@@ -294,6 +433,15 @@
     }
    ]
   },
+  "/procestechnologie": {
+   "opleiding": "Procestechnologie",
+   "studenten": [
+    {
+     "naam": "Kane",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6788f7ebd1ceda30a78f9e85"
+    }
+   ]
+  },
   "/rechtspraktijk": {
    "opleiding": "Rechtspraktijk",
    "studenten": [
@@ -304,6 +452,40 @@
     {
      "naam": "Miryam",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afec3e769f3ce11ec4c201e"
+    }
+   ]
+  },
+  "/sociaal-cultureel-werk": {
+   "opleiding": "Sociaal-Cultureel Werk",
+   "studenten": [
+    {
+     "naam": "Bink",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c0d50a3811ba94be12e5c"
+    },
+    {
+     "naam": "Olivia",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c7a775300e9dde19acac4"
+    },
+    {
+     "naam": "Phoebe",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942b9a694da9b306327dfd7"
+    }
+   ]
+  },
+  "/sociaal-juridische-dienstverlening": {
+   "opleiding": "Sociaal-Juridische Dienstverlening",
+   "studenten": [
+    {
+     "naam": "Bink",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c0d50a3811ba94be12e5c"
+    },
+    {
+     "naam": "Olivia",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c7a775300e9dde19acac4"
+    },
+    {
+     "naam": "Phoebe",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942b9a694da9b306327dfd7"
     }
    ]
   },
@@ -321,6 +503,32 @@
     {
      "naam": "Phoebe",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942b9a694da9b306327dfd7"
+    }
+   ]
+  },
+  "/softwaremanagement": {
+   "opleiding": "Product Owner",
+   "studenten": [
+    {
+     "naam": "Emilie",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc997cb2c95c043e1107e9"
+    },
+    {
+     "naam": "Lok",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afd9a0360adefacb83c195d"
+    }
+   ]
+  },
+  "/systeem-en-netwerkbeheer": {
+   "opleiding": "Infrastructure Engineer",
+   "studenten": [
+    {
+     "naam": "Emilie",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afc997cb2c95c043e1107e9"
+    },
+    {
+     "naam": "Lok",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afd9a0360adefacb83c195d"
     }
    ]
   },

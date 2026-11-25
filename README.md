@@ -21,20 +21,20 @@ De widget herkent de opleiding aan het adres van de pagina. Dezelfde code werkt 
 
 | Wat | Waar |
 |---|---|
-| Welke student bij welke opleiding | Airtable, tabel Opleidingen, veld Unibuddies |
-| Voornaam | Airtable, tabel Unibuddies, veld Voornaam |
-| Chatlink | Airtable, tabel Momenteel in Unibuddy, veld Profile link |
-| Adres van de opleidingspagina | Airtable, tabel Opleidingen, veld Opleidingsaanbod website |
+| Wie getoond wordt | Airtable, tabel Unibuddies, view "Webapp: Actief + Profile link" |
+| Voornaam, chatlink (Profile link), opleiding | Airtable, tabel Unibuddies |
+| Adres van de opleidingspagina | Airtable, tabel Opleidingspagina's website (gesynct), veld webaddress |
 | Teksten (NL en EN), link naar alle chat-studenten, CSS-klassen van de site | `inhoud.json` |
 | Logica | `widget.js` en `build-data.js` |
 
 ## Regels
 
-- Een student verschijnt als hij of zij in tabel Opleidingen bij Unibuddies staat **en** met hetzelfde e-mailadres in "Momenteel in Unibuddy" staat met een Profile link. Wie geen link heeft, wordt niet getoond; de Action somt die namen op in haar log.
-- De volgorde van de namen is de volgorde in het veld Unibuddies.
+- Een student verschijnt als hij of zij in de view "Webapp: Actief + Profile link" staat (status Actief en Profile link ingevuld) en aan een opleiding gekoppeld is. De filter van de view beheer je in Airtable.
+- De volgorde van de namen is de volgorde van de view.
 - Geen studenten voor een pagina, of laden mislukt: een algemene zin met de link naar alle chat-studenten.
 - Pagina's die met `/en/` beginnen krijgen de Engelse teksten.
-- Alleen voornaam en chatlink staan in `data.json`. Achternaam en e-mailadres blijven in Airtable.
+- Alleen voornaam en chatlink staan in `data.json`. Het script leest geen achternamen of e-mailadressen.
+- Hernoem de view gerust; verwijder ze niet (het script gebruikt haar ID).
 
 ## Geen eigen opmaak
 

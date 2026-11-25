@@ -85,7 +85,10 @@
 
   function toon(data, inh) {
     var c = samenvoegen(inh), T = c.teksten[taal] || c.teksten.nl, alleUrl = c.links.alle[taal] || c.links.alle.nl;
-    var p = data && data.paginas && data.paginas[pagina];
+    // Eigen studenten van de pagina; anders die van de pagina in "toonStudentenVan" (bv. afstudeerrichting -> opleiding).
+    var paginas = (data && data.paginas) || {};
+    var bron = inh && inh.toonStudentenVan && typeof inh.toonStudentenVan[pagina] === "string" ? inh.toonStudentenVan[pagina].replace(/\/+$/, "").toLowerCase() : "";
+    var p = paginas[pagina] || (bron ? paginas[bron] : null);
     var studenten = ((p && p.studenten) || []).filter(function (s) { return s && s.naam && veiligeUrl(s.url); });
     // Met data-titel="1" op de div toont de widget zelf het icoon en de titel, maar alleen als er nog geen titel boven staat.
     var kop = root.dataset.titel && !heeftTitel ? '<p' + (c.klassen.icoon ? ' class="' + esc(c.klassen.icoon) + '"' : "") + "></p><h5>" + esc(T.titel) + "</h5>" : "";

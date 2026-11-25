@@ -31,6 +31,7 @@ De widget herkent de opleiding aan het adres van de pagina. Dezelfde code werkt 
 
 - Een student verschijnt als hij of zij in de view "Webapp: Actief + Profile link" staat (status Actief en Profile link ingevuld) en aan een opleiding gekoppeld is. De filter van de view beheer je in Airtable.
 - De volgorde van de namen is de volgorde van de view.
+- Afstudeerrichtingen en andere pagina's zonder eigen studenten kunnen de studenten van een andere pagina tonen: zie `toonStudentenVan` in `inhoud.json`.
 - Geen studenten voor een pagina, of laden mislukt: een algemene zin met de link naar alle chat-studenten.
 - Pagina's die met `/en/` beginnen krijgen de Engelse teksten.
 - Alleen voornaam en chatlink staan in `data.json`. Het script leest geen achternamen of e-mailadressen.

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T06:25:51.457Z",
+ "updated": "2026-11-25T09:52:46.748Z",
  "paginas": {
   "/accountancy-fiscaliteit": {
    "opleiding": "Accountancy-Fiscaliteit",
@@ -57,15 +57,6 @@
     }
    ]
   },
-  "/bachelor-chemie": {
-   "opleiding": "Chemie",
-   "studenten": [
-    {
-     "naam": "Kane",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6788f7ebd1ceda30a78f9e85"
-    }
-   ]
-  },
   "/bachelor-cross-media-management": {
    "opleiding": "Cross Media Management",
    "studenten": [
@@ -98,15 +89,6 @@
     {
      "naam": "Kane",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6788f7ebd1ceda30a78f9e85"
-    }
-   ]
-  },
-  "/biomedische-laboratoriumtechnologie": {
-   "opleiding": "Biomedische Laboratoriumtechnologie",
-   "studenten": [
-    {
-     "naam": "Quyana",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693af7385300e93c4ec2ac79"
     }
    ]
   },
@@ -292,23 +274,6 @@
     {
      "naam": "Yasmine",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/697a8bfcab9a84896147b3cb"
-    }
-   ]
-  },
-  "/maatschappelijke-advisering": {
-   "opleiding": "Maatschappelijke Advisering",
-   "studenten": [
-    {
-     "naam": "Bink",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c0d50a3811ba94be12e5c"
-    },
-    {
-     "naam": "Olivia",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693c7a775300e9dde19acac4"
-    },
-    {
-     "naam": "Phoebe",
-     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6942b9a694da9b306327dfd7"
     }
    ]
   },

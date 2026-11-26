@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T09:52:46.748Z",
+ "updated": "2026-11-26T12:54:25.775Z",
  "paginas": {
   "/accountancy-fiscaliteit": {
    "opleiding": "Accountancy-Fiscaliteit",
@@ -54,6 +54,15 @@
     {
      "naam": "Fiebe",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6b0197bd0020beaed9d4f32d"
+    }
+   ]
+  },
+  "/bachelor-chemie": {
+   "opleiding": "Chemie",
+   "studenten": [
+    {
+     "naam": "Kane",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6788f7ebd1ceda30a78f9e85"
     }
    ]
   },
@@ -507,6 +516,23 @@
     {
      "naam": "Lok",
      "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6afd9a0360adefacb83c195d"
+    }
+   ]
+  },
+  "/toegepaste-jeugdcriminologie": {
+   "opleiding": "Toegepaste Jeugdcriminologie",
+   "studenten": [
+    {
+     "naam": "Audrey",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/6979e9c1ec5ef2df99667359"
+    },
+    {
+     "naam": "Brechtje",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/67d00e2987a4a969abefc52d"
+    },
+    {
+     "naam": "Kaat",
+     "url": "https://api.unibuddy.co/og/karel-de-grote-hogeschool/buddies/students/693ffa084e12750a8242e404"
     }
    ]
   },

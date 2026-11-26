@@ -4,7 +4,7 @@ Kleine webapp die op de opleidingspagina's van kdg.be de chat-studenten van die 
 
 ## Opzet
 
-Airtable (base Unibuddy) → GitHub Action (elk uur, token als secret `AIRTABLE_TOKEN`) → `data.json` op GitHub Pages → `widget.js` → kdg.be.
+Airtable (base Unibuddy) → GitHub Action (drie pogingen per uur, zodat er minstens elk uur een run is; token als secret `AIRTABLE_TOKEN`) → `data.json` op GitHub Pages → `widget.js` → kdg.be.
 
 Embed-code op kdg.be (één keer in het herbruikbare blok plakken, in een HTML-paragraaf vlak onder de tekstparagraaf met het icoon en de titel "Chat met een student"):
 
